@@ -1,15 +1,30 @@
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const formData = new FormData(this);
 
-    // This is where you would normally handle the form submission, e.g., via AJAX
-    // For now, we'll just display a success message
-
-    document.getElementById("formResponse").textContent = `Thank you, ${name}! We have received your message.`;
-
-    // Clear the form fields
-    document.getElementById("contactForm").reset();
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById("formResponse").textContent = 'Thank you for your message!';
+            this.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    document.getElementById("formResponse").textContent = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    document.getElementById("formResponse").textContent = 'Oops! There was a problem submitting your form';
+                }
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById("formResponse").textContent = 'Oops! There was a problem submitting your form';
+    });
 });
