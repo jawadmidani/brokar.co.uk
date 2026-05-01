@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brokar Creative UK LTD | Sophisticated Interior Design</title>
+    <!-- Linking to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for sophisticated typography (matching the serif/sans-serif logo blend) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <!-- Header & Navigation (replicates logo colors and sophistication) -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-link">
+                <!-- Placing your logo. Remember to save image_0.png as logo.png in the same folder -->
+                <img src="logo.png" alt="Brokar Creative UK LTD Logo" class="nav-logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('images/hero-interior.png');"> <!-- Replace with your best interior image -->
+        <div class="container hero-content">
+            <h1 class="serif-text">Creating Spaces That Reflect Your Sophistication.</h1>
+            <p>Elevate your UK home with tailored interior design.</p>
+            <a href="#contact" class="btn btn-primary">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about section-padding">
+        <div class="container grid-2-col">
+            <div class="about-text">
+                <h2 class="serif-text">About Brokar Creative</h2>
+                <span class="section-subtitle">A Fusion of Style and Heritage</span>
+                <p>Welcome to Brokar Creative UK LTD, where sophistication is woven into every design. We bring a unique perspective to the UK interior design landscape, blending timeless elegance with contemporary innovation.</p>
+                <p>Inspired by the classic refinement echoed in our brand, we specialise in curating tailored environments that truly represent your vision and unique cultural nuances. Our team is dedicated to creating harmonious, functional, and deeply personal spaces.</p>
+            </div>
+            <div class="about-image">
+                <!-- Replace with an image of your team or a subtle interior detail -->
+                <img src="images/about-detail.jpg" alt="Interior design detail, refined materials." class="refined-border">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Grid Layout) -->
+    <section id="gallery" class="gallery section-padding light-bg">
+        <div class="container">
+            <h2 class="serif-text text-center">Our Portfolio</h2>
+            <p class="section-description text-center">A curated selection of our bespoke interior design projects across the UK.</p>
+            <div class="gallery-grid">
+                <!-- Replace these with actual project images -->
+                <div class="gallery-item"><img src="images/project1.jpg" alt="Living Room Project 1"></div>
+                <div class="gallery-item"><img src="images/project2.jpg" alt="Dining Area Project 2"></div>
+                <div class="gallery-item"><img src="images/project3.jpg" alt="Bespoke Bedroom Design 3"></div>
+                <div class="gallery-item"><img src="images/project4.jpg" alt="Office/Study Project 4"></div>
+                <div class="gallery-item"><img src="images/project5.jpg" alt="Luxury Bathroom Project 5"></div>
+                <div class="gallery-item"><img src="images/project6.jpg" alt="Kitchen Design Project 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Single Card Layout) -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <h2 class="serif-text text-center">What Our Clients Say</h2>
+            <div class="testimonial-card">
+                <span class="quote-icon serif-text">“</span>
+                <p class="testimonial-text">Working with Brokar Creative was a truly refined experience. They listened attentively to our vision and translated it into a home that is both functional and impeccably elegant. The attention to detail and cultural understanding were exceptional.</p>
+                <p class="testimonial-author serif-text">— Eleanor S., London</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section (Formspree Integrated) -->
+    <section id="contact" class="contact section-padding dark-accent-bg">
+        <div class="container grid-2-col">
+            <div class="contact-info">
+                <h2 class="serif-text">Let's Discuss Your Vision</h2>
+                <p>Ready to elevate your space? We invite you to contact us. Please fill out the form, and a member of our design team will respond promptly.</p>
+                <ul>
+                    <li><strong>Email:</strong> info@brokar.co.uk</li>
+                    <li><strong>Serving:</strong> The United Kingdom</li>
+                </ul>
+            </div>
+            <div class="contact-form-container">
+                <!-- CRITICAL: FORMSPREE INTEGRATION -->
+                <!-- 1. Go to https://formspree.io/ and create a free account. -->
+                <!-- 2. Create a new "Project" or "Form". -->
+                <!-- 3. Copy YOUR UNIQUE Form Endpoint (it looks like this: https://formspree.io/f/xyz123) -->
+                <!-- 4. PASTE that unique endpoint into the action=" " below: -->
+                <form action="https://formspree.io/f/mzzpjyqq" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="_replyto" placeholder="your.email@example.co.uk" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Vision & Project Details</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your space..." required></textarea>
+                    </div>
+                    <!-- Formspree hidden options for thank you page -->
+                    <!-- <input type="hidden" name="_next" value="https://yourwebsite.co.uk/thanks.html"> -->
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Brokar Creative UK LTD. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Linking to your JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
